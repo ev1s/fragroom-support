@@ -1,58 +1,253 @@
+$font-family: stolzl, sans-serif;
+$max-width: 1220px;
+$max-width-tablet: 774px;
+$min-width: 320px;
+
+$color-black: #23222a;
+$color-gray: #a0a0a6;
+$color-light-gray: #b3b6c5;
+$color-white: #f9f9fa;
+$color-accent: #3f3c52;
+$color-red: #ff0000;
+
+@font-face {
+	font-family: "stolzl";
+	src: url("../fonts/stolzl-book.woff2") format("woff2"), url("../fonts/stolzl-book.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "stolzl";
+	src: url("../fonts/stolzl-regular.woff2") format("woff2"), url("../fonts/stolzl-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "stolzl";
+	src: url("../fonts/stolzl-medium.woff2") format("woff2"), url("../fonts/stolzl-medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+// Reset default styles
+@import "_reset.scss";
+
+// Media queries
+@import "dist/_include-media.scss";
+
+body {
+	line-height: 1.7;
+	font-size: 14px;
+	font-family: $font-family;
+	font-weight: 300;
+	color: $color-black;
+	-webkit-font-smoothing: antialiased;
+	background: $color-white;
+
+	@include media("<desktop") {
+		font-size: 18px;
+	}
+
+	@include media("<tablet") {
+		font-size: 18px;
+	}
+}
+
+a {
+	color: $color-black;
+
+	@include media(">=desktop") {
+		&:hover {
+			color: $color-accent;
+		}
+	}
+}
+
+b {
+	font-weight: 500;
+}
+
+.h1 {
+	font-weight: 500;
+	font-size: 45px;
+	line-height: 1.25;
+	color: $color-black;
+}
+
+.h2 {
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 35px;
+	color: $color-black;
+}
+
+.h4 {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 25px;
+	color: $color-gray;
+}
+
+.desktop-only {
+	@include media("<desktop") {
+		display: none;
+	}
+}
+
+.button {
+	display: inline-block;
+	background: $color-accent;
+	border-radius: 2px;
+	height: 60px;
+	line-height: 60px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+
+	&_gray {
+		background: transparent;
+		border: 2px solid #e0e0e5;
+		color: #949499;
+	}
+}
+
+.input {
+	height: 60px;
+	background: #fff;
+	border: 2px solid #ebebed;
+	border-radius: 2px;
+	width: 100%;
+
+	&_file {
+		padding: 20px;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
 .header {
+	background: $color-accent;
+	padding: 20px 40px;
+
 	&__body {
+		display: flex;
+		align-items: center;
 	}
 
 	&__logo {
+		flex: 1 1 auto;
+
+		a {
+			display: block;
+			width: 120px;
+			height: 105px;
+			background: url("../img/logo.svg") no-repeat center;
+			background-size: 120px 105px;
+			text-decoration: none;
+		}
 	}
 
 	&__lang {
+		flex: 0 0 auto;
 	}
 }
+
 .lang {
 	&__item {
-		&_en {
-		}
+		display: none;
+		color: #fff;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 25px;
 
 		&_selected {
+			display: flex;
+		}
+
+		i {
+			display: block;
+			width: 28px;
+			height: 20px;
+			background-size: 28px 20px;
+			flex: 0 0 auto;
+			border-radius: 2px;
+		}
+
+		&_en {
+			background: url("../img/en.svg") no-repeat center;
 		}
 
 		&_ru {
+			background: url("../img/ru.svg") no-repeat center;
 		}
 
 		&_cn {
+			background: url("../img/cn.svg") no-repeat center;
 		}
 	}
 }
-.wrapper {
-}
+
 .form {
 	&__container {
+		width: 420px;
 	}
 
 	&__header {
+		padding-bottom: 20px;
 	}
 
 	&__steps {
+		border-top: 2px solid #e5e5eb;
+		border-bottom: 2px solid #e5e5eb;
+		padding: 20px 0;
 	}
 
 	&__steps-item {
+		color: #b2b6c4;
+
 		&_current {
+			color: $color-black;
 		}
 	}
 
 	&__steps-icon {
+		height: 32px;
+		display: block;
+
 		&_personal {
+			width: 14px;
+			background: url("../img/personal.svg") no-repeat center;
 		}
 
 		&_description {
+			width: 12px;
+			background: url("../img/description.svg") no-repeat center;
 		}
 
 		&_done {
+			width: 16px;
+			background: url("../img/done.svg") no-repeat center;
 		}
 	}
 
 	&__body {
+		display: none;
+
+		&_step-current {
+			display: block;
+		}
+
 		&_step-1 {
+		}
+
+		&_step-2 {
 		}
 
 		&_step-2 {
@@ -65,15 +260,30 @@
 	}
 
 	&__input-header {
+		display: flex;
+		font-size: 14px;
+		line-height: 1.3;
+		padding-bottom: 8px;
 	}
 
 	&__input-title {
+		flex: 1 1 auto;
+		color: $color-light-gray;
 	}
 
 	&__input-error {
+		flex: 0 0 auto;
+		color: $color-red;
+		text-align: right;
 	}
 
 	&__double-input {
+		display: flex;
+		gap: 20px;
+
+		&__input {
+			flex: 1 1 50%;
+		}
 	}
 
 	&__summary {
@@ -82,31 +292,23 @@
 	&__summary-text {
 	}
 }
-.h4 {
-}
-.h1 {
-}
-.desktop-only {
-}
-.button {
-	&_gray {
-	}
-}
-.input {
-	&_file {
-	}
-}
+
 .success {
 }
-.h2 {
-}
+
 .footer {
+	background: $color-accent;
+	padding: 20px 40px;
+
 	&__body {
+		display: flex;
 	}
 
 	&__privacy {
+		flex: 1 1 auto;
 	}
 
 	&__copyright {
+		flex: 0 0 auto;
 	}
 }
