@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<title>Fragroom — Support Form</title>
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="header__body">
+				<div class="header__logo">
+					<a href="/"></a>
+				</div>
+				<div class="header__lang lang">
+					<a href="#" class="lang__item lang__item_en lang__item_selected"> English </a>
+					<a href="#" class="lang__item lang__item_ru"> Русский </a>
+					<a href="#" class="lang__item lang__item_cn"> 中国大陆 </a>
+				</div>
+			</div>
+		</header>
+
+
+		<div class="wrapper">
+			<div class="form">
+				<div class="form__container">
+					<div class="form__header">
+						<div class="h4">How can we help you?</div>
+						<div class="h1">Support Form</div>
+					</div>
+					<div class="form__steps">
+						<div class="form__steps-item form__steps-item form__steps-item_current">
+							<i class="form__steps-icon form__steps-icon_personal"></i>Personal info
+						</div>
+						<div class="form__steps-item"><i class="form__steps-icon form__steps-icon_description"></i>Description</div>
+						<div class="form__steps-item"><i class="form__steps-icon form__steps-icon_done"></i>Done</div>
+					</div>
+
+
+					<div class="form__body form__body_step-1">
+						<div class="form__input form__input_error">
+							<div class="form__input-header">
+								<div class="form__input-title">Your Name*</div>
+								<div class="form__input-error">Please fill <span class="desktop-only">this field</span></div>
+							</div>
+							<input type="text" name="userName" />
+						</div>
+
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Email*</div>
+								<div class="form__input-error">Please fill <span class="desktop-only">this field</span></div>
+							</div>
+							<input type="text" name="userEmail" />
+						</div>
+
+						<div class="form__double-input">
+							<div class="form__input">
+								<div class="form__input-header">
+									<div class="form__input-title">Phone Number</div>
+								</div>
+								<input type="text" name="userPhone" />
+							</div>
+
+							<div class="form__input">
+								<div class="form__input-header">
+									<div class="form__input-title">Contact Method</div>
+								</div>
+								<select name="contactMethod">
+									<option value="telegram">Telegram</option>
+									<option value="whatsapp">WhatsApp</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Location</div>
+							</div>
+							<input type="text" name="gameLocation" />
+						</div>
+
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Game*</div>
+								<div class="form__input-error">Please select <span class="desktop-only">game</span></div>
+							</div>
+							<select name="game">
+								<option value="Fragroom">Fragroom</option>
+								<option value="Fragroom: Defenders">Fragroom: Defenders</option>
+							</select>
+						</div>
+
+						<div class="form__input">
+							<button class="button">Next<button>
+						</div>
+					</div>
+
+
+					<div class="form__body form__body_step-2">
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Application Type*</div>
+								<div class="form__input-error">Please select</div>
+							</div>
+							<select name="applicationType">
+								<option value="bug">Bug</option>
+								<option value="feedback">Feedback or suggestion</option>
+								<option value="business">Buisness or sales</option>
+							</select>
+						</div>
+
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Summary*</div>
+								<div class="form__input-error">Please fill <span class="desktop-only">this field</span></div>
+							</div>
+							<input type="text" name="summary" />
+						</div>
+
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Detailed Description*</div>
+								<div class="form__input-error">Please fill <span class="desktop-only">this field</span></div>
+							</div>
+							<textarea name="detailedDescription"></textarea>
+						</div>
+
+						<div class="form__input">
+							<div class="form__input-header">
+								<div class="form__input-title">Screenshots</div>
+							</div>
+							<div class="input_file">
+								<button class="button">Browse<button>
+								<div>No files</div>
+							</div>
+						</div>
+
+						<div class="form__input">
+							<img src="img/captcha.png" alt="placeholder">
+						</div>
+
+						<div class="form__double-input">
+							<div class="form__input">
+								<button class="button button_gray">Back<button>
+							</div>
+
+							<div class="form__input">
+								<input type="submit" value="Submit" class="button">
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form__body form__body_step-2">
+						<div class="form__summary">
+							<i class="success"></i>
+							<div class="h2">Ticket #12345</div>
+							<div class="form__summary-text">Thank you for the feedback. Our support team will contact you as soon as possible</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer class="footer">
+			<div class="footer__body">
+				<div class="footer__privacy">
+					<a href="#">Privacy Policy</a>
+				</div>
+				<div class="footer__copyright">
+					© District Zero
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
